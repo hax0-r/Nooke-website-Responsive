@@ -1,0 +1,15 @@
+@charset "utf-8";
+	.NormalCharacterStyle1
+{
+	font-family : MS UI Gothic;
+	font-size : 15px;
+	color : #64646A;
+	color : rgb(100, 100, 106);
+}
+.NormalCharacterStyle
+{
+	font-family : MS UI Gothic;
+	font-size : 15px;
+	color : #64646A;
+	color : rgb(100, 100, 106);
+}
