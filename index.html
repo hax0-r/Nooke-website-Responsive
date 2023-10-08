@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./bootstrap.css" />
     <!-- <link rel="stylesheet" href="./my-bootstrap.css"> -->
     <link rel="stylesheet" href="./nooke.css" />
-
+    
     <!-- ==============font awesome================== -->
     <link
       rel="stylesheet"
@@ -35,7 +35,7 @@
               <i class="fa-solid fa-bars-staggered" id="nav-btn"></i>
             </div>
             <div class="nav-links col-6">
-              <ul class="row d-flex">
+              <ul class="row d-flex nav-lik">
                 <li class="col-md-3"><a href="">home</a></li>
                 <li class="col-md-3"><a href="">about</a></li>
                 <li class="col-md-3"><a href="">services</a></li>
@@ -66,7 +66,7 @@
             <div class="home-section mt-md-5">
               <div class="home-content">
                 <h1>Handmade for <br />your home</h1>
-                <button>SHOP</button>
+                <button style="opacity: 0;" id="shop">SHOP</button>
               </div>
             </div>
           </div>
@@ -358,5 +358,44 @@ because of the beautiful plates
       </div>
     </div>
   </body>
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./nooke.js"></script>
-</html>
+  
+  
+  <script>
+    if (window.innerWidth > 768) {
+      gsap.to(".page2-img",{
+        y:150,
+        duration:2,
+        scrollTrigger:{
+          trigger:".page2-img",
+          scroller:"body",
+          scrub:1
+        }
+      })
+    }
+    gsap.from(".card",{
+      y:250,
+      scale:.40,
+      duration:2,
+      opacity:0,
+      scrollTrigger:{
+        end:"end 78%",
+        trigger:".card",
+        scroller:"body",
+        scrub:1,
+      }
+    })
+    let lineWise =  gsap.timeline()
+    lineWise.from(".nav-lik li,.nav-logo",{
+      y:-100
+    }) 
+    lineWise.to("#shop",{
+    duration:2,
+    scale:1.20,
+    opacity:100
+    })
+      </script>
+      </html>
