@@ -66,7 +66,7 @@
             <div class="home-section mt-md-5">
               <div class="home-content">
                 <h1>Handmade for <br />your home</h1>
-                <button style="opacity: 0;" id="shop">SHOP</button>
+                <button>SHOP</button>
               </div>
             </div>
           </div>
@@ -388,14 +388,29 @@ because of the beautiful plates
         scrub:1,
       }
     })
-    let lineWise =  gsap.timeline()
-    lineWise.from(".nav-lik li,.nav-logo",{
-      y:-100
-    }) 
-    lineWise.to("#shop",{
-    duration:2,
-    scale:1.20,
-    opacity:100
+    let lineWise =  gsap.timeline({ Defaults: { Easing: Expo.EaseOut } })
+    lineWise.from("#header",{
+      scale:2,
+       duration:2, 
+       opacity: 0,
+        ease: Expo.easeOut, 
+        delay: 0.2 ,
+        rotate:10
     })
+    gsap.from(".home-content button",{
+      x:-700,
+      duration:1.5,
+      opacity:0,
+      scale:2
+      
+
+    })
+    gsap.from(".home-content h1",{
+      x:1000,
+      duration:2,
+      opacity:0
+    })
+
+    
       </script>
       </html>

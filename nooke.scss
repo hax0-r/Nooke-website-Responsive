@@ -153,8 +153,9 @@ header {
     font-weight: bold;
     background-color: #dd9d4c;
     color: rgb(255, 255, 255);
-    transition: 0.2s ease-in-out;
+    transition: 200ms all;
     @include boxShadow();
+    outline: none;
   &:focus{
     border: none;
   }
